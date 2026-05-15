@@ -6,9 +6,9 @@ import HabilidadesScreen from './screens/HabilidadesScreen';
 import ProjetosScreen from './screens/ProjetosScreen';
 
 const tabs = [
-  { key: 'perfil', label: 'Perfil' },
-  { key: 'habilidades', label: 'Habilidades' },
-  { key: 'projetos', label: 'Projetos' },
+  { key: 'perfil', label: 'Perfil', icon: '👤' },
+  { key: 'habilidades', label: 'Habilidades', icon: '⚡' },
+  { key: 'projetos', label: 'Projetos', icon: '💼' },
 ];
 
 export default function App() {
@@ -50,6 +50,7 @@ export default function App() {
               onPress={() => setActiveTab(tab.key)}
               style={[styles.tabButton, isActive && styles.tabButtonActive]}
             >
+              <Text style={[styles.tabIcon, isActive && styles.tabLabelActive]}>{tab.icon}</Text>
               <Text style={[styles.tabLabel, isActive && styles.tabLabelActive]}>{tab.label}</Text>
             </TouchableOpacity>
           );
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0d1b2a',
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24,
+    alignItems: 'center',
   },
   appLabel: {
     color: '#8fb4ff',
@@ -109,6 +111,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 12,
     borderRadius: 16,
+  },
+  tabIcon: {
+    fontSize: 18,
+    marginBottom: 4,
   },
   tabButtonActive: {
     backgroundColor: '#244b7a',

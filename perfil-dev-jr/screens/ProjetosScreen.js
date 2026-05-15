@@ -1,18 +1,71 @@
 import { useState } from 'react';
-import { Alert, Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Button, Image, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 const projects = [
 	{
 		id: '1',
-		name: 'DevStart Schedule',
-		description: 'Aplicativo de agenda para organizar tarefas e compromissos do dia.',
-		stack: 'React Native, Expo e armazenamento local',
+		name: 'Pokedex Mobile',
+		description: 'Aplicativo de consulta de Pokémons com dados reais e navegação fluida.',
+		stack: 'React Native, Expo e armazenamento local, API pública de Pokémon',
 	},
 	{
 		id: '2',
-		name: 'Portfolio Mobile',
-		description: 'Tela de apresentação profissional com foco em clareza visual.',
-		stack: 'React Native, StyleSheet e componentes básicos',
+		name: 'Lista de Compras',
+		description: 'Aplicativo para criar e gerenciar listas de compras com itens categorizados.',
+		stack: 'React Native, Expo e armazenamento local',
+	},
+	{
+		id: '3',
+		name: 'Guia Turistico',
+		description: 'App de guia turístico com informações sobre pontos de interesse, mapas e dicas de viagem.',
+		stack: 'React Native, Expo, API de mapas e dados turísticos públicos',
+	},
+	{
+		id: '4',
+		name: 'MindFlow',
+		description: 'Aplicativo de organização pessoal e produtividade com foco em fluxos de trabalho simples.',
+		stack: 'React Native, Expo e armazenamento local',
+	},
+	{
+		id: '5',
+		name: 'CineFlix',
+		description: 'App de consulta de filmes e séries com avaliações, trailers e recomendações personalizadas.',
+		stack: 'React Native, Expo e API pública de filmes',
+	}
+];
+
+const contactItems = [
+	{
+		id: 'email',
+		label: 'E-mail',
+		value: 'victor.b.assumpcao@aluno.senai.br',
+		icon: require('../assets/gmail.png'),
+		iconSize: 36,
+	},
+	{
+		id: 'github',
+		label: 'GitHub',
+		value: 'github.com/vboehm09',
+		icon: require('../assets/github.png'),
+	},
+	{
+		id: 'linkedin',
+		label: 'LinkedIn',
+		value: 'linkedin.com/in/victorboehm',
+		icon: require('../assets/linkedin.png'),
+	},
+	{
+		id: 'instagram',
+		label: 'Instagram',
+		value: 'v_boehm_',
+		icon: require('../assets/instagram.png'),
+	},
+	{
+		id: 'whatsapp',
+		label: 'WhatsApp',
+		value: '+55 19 99186-3182',
+		icon: require('../assets/whatsapp.png'),
+		iconSize: 48,
 	},
 ];
 
@@ -52,9 +105,20 @@ export default function ProjetosScreen() {
 				<Text style={styles.sectionTitle}>Contato</Text>
 
 				<View style={styles.contactCard}>
-					<Text style={styles.contactLine}>E-mail: victor.b.assumpcao@aluno.senai.br</Text>
-					<Text style={styles.contactLine}>GitHub: github.com/vboehm09</Text>
-					<Text style={styles.contactLine}>LinkedIn: linkedin.com/in/victorboehm</Text>
+					{contactItems.map((contact) => (
+						<View key={contact.id} style={styles.contactItem}>
+							<View style={styles.contactIconWrap}>
+								<Image
+									source={contact.icon}
+									style={[styles.contactIcon, { width: contact.iconSize || 28, height: contact.iconSize || 38 }]}
+								/>
+							</View>
+							<View style={styles.contactTextBlock}>
+								<Text style={styles.contactLabel}>{contact.label}</Text>
+								<Text style={styles.contactValue}>{contact.value}</Text>
+							</View>
+						</View>
+					))}
 
 					<Text style={styles.label}>Mensagem</Text>
 					<TextInput
@@ -134,11 +198,38 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: '#1f3b63',
 	},
-	contactLine: {
+	contactItem: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		paddingVertical: 10,
+		borderBottomWidth: 1,
+		borderBottomColor: '#1f3350',
+	},
+	contactIconWrap: {
+		width: 42,
+		height: 42,
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginRight: 12,
+	},
+	contactIcon: {
+		width: 28,
+		height: 38,
+		resizeMode: 'contain',
+	},
+	contactTextBlock: {
+		flex: 1,
+	},
+	contactLabel: {
+		color: '#ffffff',
+		fontSize: 14,
+		fontWeight: '800',
+	},
+	contactValue: {
 		color: '#d5e1f0',
 		fontSize: 14,
-		lineHeight: 21,
-		marginBottom: 4,
+		lineHeight: 20,
+		marginTop: 2,
 	},
 	label: {
 		color: '#ffffff',

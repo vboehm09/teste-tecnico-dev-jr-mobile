@@ -19,7 +19,7 @@ export default function PerfilScreen() {
 						Sou um desenvolvedor mobile apaixonado por criar experiências digitais fluidas e centradas no usuário. Meu foco é desenvolver aplicativos em React Native que sejam não apenas funcionais, mas acessíveis, limpos e intuitivos. Em vez de depender excessivamente de bibliotecas prontas, gosto de dominar os fundamentos da tecnologia para construir arquiteturas organizadas e componentes leves, garantindo a melhor performance e usabilidade desde a primeira tela.
 					</Text>
 					<Text style={styles.aboutText}>
-						Neste projeto, priorizei uma arquitetura limpa e a performance do aplicativo. Estruturei a aplicação com uma divisão clara de telas e utilizei exclusivamente os componentes core do React Native. O principal desafio técnico foi o desenvolvimento de uma navegação por abas inferiores (bottom tab navigation) construída totalmente do zero. Ao optar por não depender de bibliotecas visuais de terceiros, garanti um código mais leve, maior controle sobre a interface e consolidei meu domínio sobre os fundamentos do framework.
+						Neste projeto, desenvolvido como um teste técnico para Desenvolvedor Mobile Jr., apliquei as melhores práticas de organização e performance no React Native. Em vez de recorrer a bibliotecas de UI prontas, optei por construir uma navegação por abas (bottom tabs) totalmente customizada utilizando apenas os componentes core do framework. Essa decisão garantiu uma aplicação extremamente leve e me permitiu demonstrar um domínio sólido sobre o ciclo de vida dos componentes e a estruturação de layouts acessíveis e responsivos.
 					</Text>
 				</View>
 			</View>
